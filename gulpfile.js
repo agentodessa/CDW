@@ -45,11 +45,6 @@ gulp.task('jscs', function () {
 
 gulp.task('scripts.app', function () {
     var source = [
-        //'app.eventBus.js',
-        //'app.module.js',
-        //'app.constants.js',
-        //'app.config.js',
-        //'app.routes.js',
         'firebase.js',
         templateModulesDir + '**/**.js',
         templateComponentsDir + '**/**.js'
