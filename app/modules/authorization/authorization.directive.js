@@ -1,3 +1,15 @@
-/**
- * Created by Andrew on 2/22/2015.
- */
+(function () {
+	'use strict';
+
+
+	function authModal(templatesMOdulesDir) {
+		return {
+			restrict: 'EA',
+			templateUrl: templateModulesDir + 'authorization/authorization.directive.html'
+		}
+	}
+
+	angular
+		.module('app')
+		.directive('authModal', authModal)
+})();

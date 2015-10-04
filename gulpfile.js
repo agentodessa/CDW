@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     bower = require('gulp-bower'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
-    jscs = require('gulp-jscs'),
+    ngAnnotate = require('gulp-ng-annotate'),
     //jsdoc = require("gulp-jsdoc"),
     template = require('gulp-template'),
     runSequence = require('run-sequence'),
@@ -45,7 +45,6 @@ gulp.task('jscs', function () {
 
 gulp.task('scripts.app', function () {
     var source = [
-        'firebase.js',
         templateModulesDir + '**/**.js',
         templateComponentsDir + '**/**.js'
     ].map(function (dir) {
@@ -53,6 +52,7 @@ gulp.task('scripts.app', function () {
         });
     return gulp.src(source)
         .pipe(concat('app.js'))
+        .pipe(ngAnnotate())
         .pipe(template({
             templateModulesDir: vendorDir + templateModulesDir,
             templateComponentsDir: vendorDir + templateComponentsDir
