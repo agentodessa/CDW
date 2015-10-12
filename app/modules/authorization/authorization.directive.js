@@ -1,11 +1,14 @@
 (function () {
 	'use strict';
+	/*
+	 @ngInject
+	 */
 
-
-	function authModal(templatesMOdulesDir) {
+	function authModal() {
 		return {
 			restrict: 'EA',
-			templateUrl: templateModulesDir + 'authorization/authorization.directive.html'
+			templateUrl: 'vendor/modules/authorization/' + 'authorization.directive.html',
+			controller: 'authController'
 		}
 	}
 

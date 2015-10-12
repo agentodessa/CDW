@@ -1,3 +1,12 @@
-/**
- * Created by agent on 10/4/2015.
- */
+(function () {
+	'use strict';
+	/*
+	@ngInject
+	*/
+	function authController() {
+
+	}
+	angular
+		.module('app')
+		.controller('authController', authController)
+})();
